@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>流水账</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/table/table.css">
+</head>
+<body>
+	<table border="1" class="table">
+		<tr><th>编号</th><th>用户uid</th><th>类型</th><th>点数</th><th>时间</th></tr>
+		<foreach name="data" item="vo">
+    <tr><td>{$vo.id}</td><td>{$vo.username}</td><td><if condition="$vo.status eq 0 ">充值
+<else /> 提现
+</if></td><td>{$vo.money}</td><td>{$vo.time}</td></tr>
+</foreach>
+	</table>
+</body>
+</html>

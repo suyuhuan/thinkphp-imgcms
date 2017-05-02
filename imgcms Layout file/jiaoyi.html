@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>会员中心_交易_购买详情</title>
+    <link rel="stylesheet" href="css/style.css">
+	<script src="laydate/laydate.js"></script>
+	<script src="js/jquery1.42.min.js"></script>
+	<script>
+		$(function(){
+			$(".showTips").hover(function(){
+				$(this).parent().find(".tips").show();
+			},function(){
+
+				$(this).parent().find(".tips").hide();
+			});
+		})
+	</script>
+  </head>
+  <body>
+  	<div id="top">
+  		<div class="container">
+  			<div class="user">您好，<span>a893434!</span><img src="images/icon-1.png" alt="">  <a href="#">退出</a></div>
+  			<div class="shop">购物车：<span>(1)</span>| 收藏夹：<span>(0)</span>| 账户余额：<span>(0)</span></div>
+  			<div class="wx"><a href="#">手机客服</a></div>
+  			<div class="ss"><a href="#">销售客服</a></div>
+  			<div class="sj"><a href="#">4008 222 123</a></div>
+  		</div>
+  	</div>
+	<div id="logo">
+		<div class="container">
+			<a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+			<img src="images/logo-r.png" class="logo-r" alt="">
+			<p>精美炫酷的图片网上家园！</p>
+		</div>
+	</div>
+	<div id="nav">
+		<div class="container">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">购买图片</a></li>
+				<li><a href="#">出售图片</a></li>
+				<li><a href="#" class="active">我的账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main">
+		<div class="container">
+			<div class="acount_side">
+				<ul>
+					<li>
+						<a href="#">我的资料</a>
+					</li>
+					<li>
+						<a href="#">我的认证</a>
+					</li>
+					<li>
+						<a href="#">我的收藏</a>
+					</li>
+					<li>
+						<a href="#">发布</a>
+					</li>
+					<li>
+						<a href="#" class="on">交易</a>
+					</li>
+					<li>
+						<a href="#">提现</a>
+					</li>
+					<li>
+						<a href="#">点数记录</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right_table">
+				<ul class="type">
+					<li><a href="#" class="on">已购买</a></li>
+					<li><a href="#">已购买</a></li>
+					<li><a href="#">交易失败</a></li>
+					<li><a href="#">已购买</a></li>
+				</ul>
+				<div class="search">
+					<form action="">
+						<div class="l">
+							<select name="name" id="name" class="text">
+								<option value="">名称</option>
+								<option value="">名称2</option>
+								<option value="">名称3</option>
+							</select>
+							<input type="text" class="text">
+						</div>
+						<div class="r">
+							<label for="">选择日期：从</label>
+							<input type="text" class="text time" onclick="laydate()">
+							<label for="">到</label>
+							<input type="text" class="text time" onclick="laydate()">
+							<input type="submit" value="查询" class="btn">
+						</div>
+
+					</form>
+				</div>
+				<ul class="jiaoyi_list">
+					<li>
+						<img src="images/good_pic-2.jpg" class="good_pic" alt="">
+						<div class="info">
+							<p><a href="#">大黄狗</a></p>
+							<p>[交易类型]作品交易</p>
+							<p>[标价]50.00</p>
+							<p>[分类]摄影-动物摄影-家禽家畜[专辑]动物</p>
+							<p>合同编号：vvbds212123</p>
+						</div>
+						<div class="m">
+							<p class="price">¥ <i>20.00</i></p>
+							<p>[买]交易成功</p>
+						</div>
+						<div class="r">
+							<img src="images/avetor.jpg" class="showTips" alt="">
+							<p class="name">影样麦片</p>
+							<p><a href="#">[修改]</a></p>
+							<div class="tips">
+								<div>
+									<span class="price">225.00</span>
+									<span>总收入</span>
+								</div>
+								<div>
+									<span class="price">13</span>
+									<span>交易量</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="images/good_pic-2.jpg" class="good_pic" alt="">
+						<div class="info">
+							<p><a href="#">大黄狗</a></p>
+							<p>[交易类型]作品交易</p>
+							<p>[标价]50.00</p>
+							<p>[分类]摄影-动物摄影-家禽家畜[专辑]动物</p>
+							<p>合同编号：vvbds212123</p>
+						</div>
+						<div class="m">
+							<p class="price">¥ <i>20.00</i></p>
+							<p>[买]交易成功</p>
+						</div>
+						<div class="r">
+							<img src="images/avetor.jpg" class="showTips" alt="">
+							<p class="name">影样麦片</p>
+							<p><a href="#">[修改]</a></p>
+							<div class="tips">
+								<div>
+									<span class="price">225.00</span>
+									<span>总收入</span>
+								</div>
+								<div>
+									<span class="price">13</span>
+									<span>交易量</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="bottom">
+		<div class="container">
+			<div class="about">
+				<div class="tit">关于我们</div>
+				<i></i>
+				<ul>
+					<li><a href="#">版权注册</a></li>
+					<li><a href="#">代理协议</a></li>
+					<li><a href="#">版权注册公示</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<div class="tit">关于我们</div>
+				<i></i>
+				<ul>
+					<li><a href="#">上传图片</a></li>
+					<li><a href="#">质量标准</a></li>
+					<li><a href="#">出售条款</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<div class="tit">关于我们</div>
+				<i></i>
+				<ul>
+					<li><a href="#">购图合同</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="sys">
+				<div class="tit">扫一扫</div>
+				<div class="ewm">
+					<img src="images/aewm.jpg" alt="">
+					<p>安卓客户端</p>
+				</div>
+				<div class="ewm">
+					<img src="images/aewm.jpg" alt="">
+					<p>苹果客户端</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>Copyright © 2004-2015  深圳XXX网络科技有限公司版权所有<br>ICP证沪B2－20070020 沪ICP备07006315号 <img src="images/dd.png" alt=""></p>
+			</div>
+		</div>
+	</div>
+	
+  </body>
+</html>

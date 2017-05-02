@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会员列表</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/table/table.css">
+</head>
+<body>
+	<center>
+	<h1>以下是回收站</h1>
+	<table border="1" class="table">
+		<tr><th>编号</th><th>会员名</th><th>操作</th></tr>
+		<foreach name="data" item="vo">
+			<tr><td>{$vo.id}</td><td>{$vo.username}</td><td><a href="__URL__/up2/id/{$vo.id}">恢复</a></td></tr>
+		</foreach>
+	</table>
+	{$page}
+	</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新增分类</title>
+	<script language="JavaScript" src="__PUBLIC__/js/jquery.js" 
+	type="text/JavaScript"></script> 
+</head>
+<body>
+
+	查看已有图片分类:<select id="ch"><option>请选择</option>
+		<foreach name="data" item="vo" class="fu">
+	 			<option value="{$vo.id}" class="aa">{$vo.name}</option>
+ 		</foreach>
+ 	 </select>
+ 	 <select name="data" id="father"><option value="">请选择</option></select>
+ 	 <div class="click">点我新增分类</div><!-- <div class="change">点我修改分类</div> --><br>
+	<script type="text/javascript">
+	$(function(){
+
+		$(".click").click(function(){
+			window.location.href='__URL__/add';
+			$(this).css('color','blue');
+		})
+		$(".change").click(function(){
+			var val = $("#father").val()
+			var fu  = $(".fu").val()
+		})
+		var path = $('#ch');
+		path.change(function(){
+			var pid = $(this).val();
+			$.ajax({
+				type: "POST",
+			  	url: "__URL__/returnajax",
+			  	data: "pid="+pid,
+			  	success: function(html){
+			  		var htm = eval(html).length;
+			  		var val = eval(html)
+			  		var str='<option>请选择</option>';
+			  		for(var i=0;i<htm;i++){
+			  			$("#father").empty();
+			  			str=str+'<option value="'+val[i].id+'">'+val[i].name+'</option>';
+			   		}
+			   		$("#father").append(str);
+			  	}
+			});
+			return pid;
+		})
+	})
+</script>
+</body>
+</html>

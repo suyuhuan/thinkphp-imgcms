@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>插入操作</title>
+</head>
+<body>
+<center>
+<table border="1">
+<form action="__URL__/Add_pic" method="POST" enctype="multipart/form-data" >
+<tr><td>
+	用户id：<input type="text" name="uid"></td></tr>
+	<tr><td>图片标题：<input type="text" name="img_title"></td></tr>
+	<tr><td>图片关键字：<input type="text" name="img_key_words"></td></tr>
+	<tr><td>图片上传：<input type="file" name="img_path"></td></tr>
+	<tr><td>图片价格：<input type="text" name="img_price"></td></tr>
+	<tr><td>图片描述：<input type="text" name="img_content"></td></tr>
+	<tr><td>图片分类：<select><option>请选择</option>
+	<foreach name="data" item="vo" ><option value="{$vo.id}" class='aa'>{$vo.name}</option></foreach></select>
+		<select  name="img_classify" id="father"><option>请选择</option></select></td></tr>
+		<tr><td>图片标题：<input type="radio" name="type" value="1">买断模式<input type="radio" name="type" value="0">全授权模式</td></tr>
+		<tr><td>审核：<input type="radio" name="status" value="1">通过<input type="radio" name="status" value="2">不通过</td></tr>
+		<tr><td>未通过理由：<input type="text" name="reason"></td></tr>
+
+	<tr><td><input type="submit" value="提交"></td></tr>
+</form>
+</table>
+</center>
+<script language="JavaScript" src="__PUBLIC__/js/jquery.js" 
+	type="text/JavaScript"></script> 
+<script type="text/javascript">
+	$(function(){
+		var path = $('.aa');
+		path.click(function(){
+			var pid = $(this).val();
+			$.ajax({
+				type: "POST",
+			  	url: "__URL__/returnajax",
+			  	data: "pid="+pid,
+			  	success: function(html){
+			  		var htm = eval(html).length;
+			  		var val = eval(html)
+			  		var str='';
+			  		for(var i=0;i<htm;i++){
+			  			$("#father").empty();
+			  			str=str+'<option value="'+val[i].id+'">'+val[i].name+'</option>';
+			   		}
+			   		$("#father").append(str);
+			  	}
+			});
+		})
+	})
+</script>
+	
+</body>
+</html>

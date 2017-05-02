@@ -1,0 +1,95 @@
+<layout name="layout" />
+<script>
+function check(){
+	var group_id = $('#group_id').val();
+	if(group_id == ''){
+		layer.tips('请选择所属用户组', '#group_id');
+		return false;
+	}
+	return true;
+}
+</script>
+
+<body>
+<div class="nav">
+	<div class="nav_title">
+    	<h2><img class="nav_img" src="__PUBLIC__/Admin/img/tab.gif" /><span class="nav_a">编辑用户</span></h2>
+    </div>
+    <div class="nav_button">
+    	<a href="{:U('Admin/admin_list')}"><button class="button">返回上一层</button></a>
+    </div>
+</div>
+<form name="myform" action="__SELF__" method="post" onsubmit="return check();">
+<div class="list">
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="details">
+        <tbody>
+	      <tr>
+	      	<td width="17%"><label class="label">
+	      	  <div align="right">账号：</div>
+	      	</label></td>
+	      	<td width="83%">{$vo.account}</td>
+	      </tr>
+          <tr>
+            <td><div align="right">用户组：</div></td>
+            <td><select name="group_id" id="group_id" class="select">
+            <option value="{$vo.group_id}">{$vo.title}</option>
+            <if condition="$_SESSION['aid'] eq 1">
+            <option value="">---- 请选择所属组 ----</option>
+            <foreach name="group" item="vo2">
+            <option value="{$vo2.id}">{$vo2.title}</option>
+            </foreach>
+            </if>
+            </select></td>
+          </tr>
+          <tr>
+            <td><div align="right">Email：</div></td>
+            <td><input type="text" name="email" id="email" size="40" value="{$vo.email}" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">手机号：</div></td>
+            <td><input type="text" name="mobile" id="mobile" size="40" value="{$vo.mobile}" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">最近登录IP：</div></td>
+            <td>{$vo.login_ip}</td>
+          </tr>
+          <tr>
+            <td><div align="right">最近登录时间：</div></td>
+            <td>{$vo.login_time|date='Y-m-d H:i:s',###}</td>
+          </tr>
+          <tr>
+            <td><div align="right">登录次数：</div></td>
+            <td>{$vo.login_count}</td>
+          </tr>
+          <tr>
+            <td><div align="right">创建时间：</div></td>
+            <td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+          </tr>  
+          <tr>
+            <td><div align="right">账号状态：</div></td>
+            <td>
+            <if condition="$_SESSION['aid'] == 1">
+<input name="status" type="radio" id="qiyong" value="1" style="position:relative;top:8px;"  <if condition="$vo.status eq 1"> checked </if> />
+            <label for="qiyong">启用</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input name="status" type="radio" id="jinyong" value="0" style="position:relative;top:8px;"  <if condition="$vo.status eq 0"> checked </if> />
+            <label for="jinyong">禁用</label>
+            <else/>
+            正常<input name="status" type="hidden" value="1" />
+          	</if>
+            </td>
+          </tr>
+          
+        </tbody>
+  </table>
+</div>
+
+<div class="footer">
+	<div class="save_button">
+    	<input type="hidden" name="id" value="{$vo.id}" />
+        <button type="submit" class="button" style="width:180px;">保 存</button>
+    </div>
+</div>
+</form>
+
+</body>
+</html>

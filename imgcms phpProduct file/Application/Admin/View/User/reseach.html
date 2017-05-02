@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>搜索页面</title>
+</head>
+<body>
+	<center>
+	<h2>以下为搜索结果</h2>
+	<table border="1" >
+		<tr><th>编号</th><th>所属机构</th><th>会员名</th><th>点数余额</th><th>状态</th><th>操作</th></tr>
+		<foreach name="data" item="vo">
+			<tr><td>{$vo.id}</td><td><if condition="($vo.type eq 0)">个人<else />机构</if></td><td>{$vo.username}</td><td>{$vo.money}</td><td><if condition="($vo.status eq 0)"><a href="__URL__/get_state/id/{$vo.id}">一键认证</a><elseif condition="$vo.status eq 2"/>未通过<else /> 已认证</if></td><td><a href="__URL__/del/id/{$vo.id}">删除</a>|<a href="__URL__/edit/id/{$vo.id}">修改</a></td></tr>
+		</foreach>
+	</table>
+	{$page}
+	</center>
+</body>
+</html>

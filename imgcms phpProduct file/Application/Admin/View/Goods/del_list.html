@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/table/table.css">
+    <style type="text/css">
+    li{list-style:none; }</style>
+</head>
+<body>
+	<table border="1" class="table">
+		<tr><th>编号</th><th>用户名</th><th>授权模式</th><th>名字</th><th>关键字</th><th>所属类</th><th>缩略图</th><th>价格</th><th>图片描述</th><th>审核</th><th>上传时间</th><th>操作</th></trs>
+		<foreach name="data" item="vo" ><tr><td>{$vo.id}</td><td>{$vo.username}</td><td><if condition="$vo.type eq 1">买断模式<else />全授权模式</if></td><td>{$vo.img_title}</td><td>{$vo.img_key_words}</td><td>{$vo.name}</td><td id="id">
+	 <ul>
+	  <li><img src="__PUBLIC__/upload/s{$vo.img_s_img}">
+	  </li></td><td>{$vo.img_price}</td><td>{$vo.img_content}</td><td><if condition="$vo.status eq 1 "><font color="green">通过</font><elseif condition="$vo.status eq 2"/><font >未通过</font><else /><font color="red">未审核</font></if></td><td>{$vo.file_time|date="m-d/H时",###}</td><td><a href="__URL__/remove_pic/id/{$vo.id}">恢复</a>|<a href="__URL__/del_act/id/{$vo.id}">永久删除</a></td></tr></foreach>
+	</table>
+</body>
+</html>

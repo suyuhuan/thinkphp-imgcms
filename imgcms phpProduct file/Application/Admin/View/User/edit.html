@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会员列表</title>
+</head>
+<body>
+	<center>
+	<table border="1" >
+	<form action="__URL__/edit/" method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{$data.id}">
+		<tr><td>组织类型:</td><td><input type="radio" name="type" value="0" <if condition='$data.type eq 0 '> checked = "checked"  <else /> </if>/>个人
+		<input type="radio" name="type" value="1" <if condition='$data.type eq 1 '> checked="checked"<else /></if>/>机构</td></tr>
+		<tr><td>用户名:</td><td><input type="text" name="username" value="{$data.username}" disabled></td></tr>
+		<tr><td>真实姓名:</td><td><input type="text" name="name" value="{$data.name}"></td></tr>
+		<tr><td>身份证号:</td><td><input type="text" name="sns_num" value=<if condition='$data.sns_num neq 0 '>"{$data.sns_num}"<else />"" placeholder="请输入身份证号"</if>></td></tr>
+		<tr><td>剩余点数:</td><td><input type="text" name="money" value="{$data.money}"></td></tr>
+		<tr><td>手机:</td><td><input type="text" name="mobile" value=<if condition='$data.mobile neq 0 '>"{$data.mobile}"<else />"" placeholder="请输入手机号"</if>></td></tr>
+		<tr><td>邮箱:</td><td><input type="text" name="email" value=<if condition='$data.email neq 0 '>"{$data.email}"<else />"" placeholder="请输入邮箱"</if>></td></tr>
+		<tr><td>身份证正面图：</td><td width="400px" height="300px"><img src="__PUBLIC__/userimg/{$data.sns_img}" style="width:400px; height:300px"></td></tr>
+		<tr><td>身份证反面图：</td><td width="400px" height="300px"><img src="__PUBLIC__/userimg/{$data.sns_other_img}" style="width:400px; height:300px"></td></tr>
+		<tr><td>营业执照图：</td><td width="300px" height="250px"><img src="__PUBLIC__/userimg/{$data.work_img}" style="width:400px; height:300px"></td></tr>
+		<tr><td>营业执照图：</td><td width="300px" height="250px"><img src="__PUBLIC__/userimg/{$data.team_img}" style="width:400px; height:300px"></td></tr>
+		<tr><td>是否通过审核:</td><td><input type="radio" name="status" value="1" <if condition='$data.status eq 0 '> checked = "checked"  <else /></if>
+		/>通过<input type="radio" name="status" value="2" <if condition='$data.status eq 2 '> checked = "checked"  <else /></if>/>未通过</td></tr>
+		<tr><td>未通过理由:</td><td><input type="text" name="n_reason" value="{$data.n_reason}"></td></tr>
+		<tr><td colspan ="2" style="text-align:center"><input type="submit" value="提交信息"></td></tr>
+	</form>
+	</table>
+	</center>
+</body>
+</html> 

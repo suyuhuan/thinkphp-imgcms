@@ -1,0 +1,29 @@
+<extend name="index/layout" />
+	<block name="main">
+	<div class="main">
+		<div class="container">
+			<div class="login">
+				<h1><span>用户登陆</span><div class="r">还没账号? <a href="#">注册</a></div></h1>
+				<form action="" method="post">
+					<div class="row">
+						<label for="username">账户</label>
+						<input type="text" name="username" class="text" placeholder="邮箱或者用户名或者手机号">
+					</div>
+					<div class="row">
+						<label for="password">密码</label>
+						<input type="password" name="password" class="text" placeholder="请输入密码">
+						<a href="#" class="forget_pw">忘记密码?</a>
+					</div>
+					<div class="row jzw">
+						<label>&nbsp;</label>
+						<input type="checkbox" checked="checked"> 记住我(下次自动登陆)
+					</div>
+					<div class="row">
+						<label>&nbsp;</label>
+						<input type="submit" class="btn" value="登陆">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</block>

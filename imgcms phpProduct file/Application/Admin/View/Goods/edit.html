@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>标题</title>
+</head>
+<body>
+<table border="1" class="table">
+<form action="__URL__/edit_pic" method="post" >
+	<tr><td>用户id</td><td><input type="text" name="uid" value="{$data.uid}" disabled="disabled"></td></tr>
+	<tr><td>类型：</td><td><input type="radio" name="type" value="1">买断模式
+	<input type="radio" name="type" value="0">全授权模式</td></tr>
+	<tr><td>标题</td><td><input type="text" name="img_title" value="{$data.img_title}"></td></tr>
+	<tr><td>关键字</td><td><input type="text" name="img_key_words" value="{$data.img_key_words}"></td></tr>
+	<tr><td>图片分类：</td><td><select><option>请选择</option>
+	<foreach name="resu" item="vo" ><option value="{$vo.id}" class='aa'>{$vo.name}</option></foreach></select>
+		<select  name="img_classify" id="father"><option>请选择</option></select></td></tr>
+	<tr><td>图</td><td><img src="__PUBLIC__/upload/s{$data.img_s_img}"></td></tr>
+	<tr><td>价格</td><td><input type="text" name="img_price" value="{$data.img_price}"></td></tr>
+	<tr><td>描述</td><td><input type="text" name="img_content" value="{$data.img_content}"></td></tr>
+	<tr><td>审核</td><td><input type="radio" name="status" value="1">通过<input type="radio" name="status" value="2">未通过</td></tr>
+	<input type="hidden" name="id" value="{$data.id}">
+	<tr> <td colspan="2"><input type="submit" value="提交"></td></tr>
+</form>
+</table>
+<script language="JavaScript" src="__PUBLIC__/js/jquery.js" 
+	type="text/JavaScript"></script> 
+<script type="text/javascript">
+	$(function(){
+		var path = $('.aa');
+		path.click(function(){
+			var pid = $(this).val();
+			$.ajax({
+				type: "POST",
+			  	url: "__URL__/returnajax",
+			  	data: "pid="+pid,
+			  	success: function(html){
+			  		var htm = eval(html).length;
+			  		var val = eval(html)
+			  		var str='';
+			  		for(var i=0;i<htm;i++){
+			  			$("#father").empty();
+			  			str=str+'<option value="'+val[i].id+'">'+val[i].name+'</option>';
+			   		}
+			   		$("#father").append(str);
+			  	}
+			});
+		})
+	})
+</script>
+</body>
+</html>

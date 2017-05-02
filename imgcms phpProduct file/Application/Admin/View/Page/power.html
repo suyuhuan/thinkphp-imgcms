@@ -1,0 +1,20 @@
+<!-- 版权页面 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>版权页面</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/table/table.css">
+</head>
+<body>
+	<table  border="1"class="table">
+		<form action="__URL__/power" method="post">
+			<tr><th>关于版权：</th><td><textarea name="power">{$data.power}</textarea></td></tr>
+			<tr><th>代理协议：</th><td><textarea name="poxy">{$data.poxy}</textarea></td></tr>
+			<tr><th>版权注册公示：</th><td><textarea name="reg">{$data.reg}</textarea></td></tr>
+			<tr><th>关于我们：</th><td><textarea name="about">{$data.about}</textarea></td></tr>
+			<tr><th>联系我们</th><td>：<textarea name="call">{$data.call}</textarea></td></tr>
+			<tr><td colspan="2"><input type="submit" value="提交"></td></tr>
+		</form>
+	</table>
+</body>
+</html>

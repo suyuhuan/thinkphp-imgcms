@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/style.css">
+    <SCRIPT LANGUAGE="JavaScript">
+		var checkflag = "false";
+		function check(field) {
+			if (checkflag == "false") {
+			for (i = 0; i < field.length; i++) {
+			field[i].checked = true;}
+			checkflag = "true";
+			return "取消"; }
+			else {
+			for (i = 0; i < field.length; i++) {
+			field[i].checked = false; }
+			checkflag = "false";
+			return "全选"; }
+		}
+</script>
+  </head>
+  <body>
+  	<div id="top">
+  		<div class="container">
+  			<div class="user">您好，<span>a893434!</span><img src="images/icon-1.png" alt="">  <a href="#">退出</a></div>
+  			<div class="shop">购物车：<span>(1)</span>| 收藏夹：<span>(0)</span>| 账户余额：<span>(0)</span></div>
+  			<div class="wx"><a href="#">手机客服</a></div>
+  			<div class="ss"><a href="#">销售客服</a></div>
+  			<div class="sj"><a href="#">4008 222 123</a></div>
+  		</div>
+  	</div>
+	<div id="logo">
+		<div class="container">
+			<a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+			<img src="images/logo-r.png" class="logo-r" alt="">
+			<p>精美炫酷的图片网上家园！</p>
+		</div>
+	</div>
+	<div id="nav">
+		<div class="container">
+			<ul>
+				<li><a href="#" class="active">首页</a></li>
+				<li><a href="#">购买图片</a></li>
+				<li><a href="#">出售图片</a></li>
+				<li><a href="#">我的账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main">
+		<div class="container">
+			<div class="shopcart">
+				<span class="title"></span>
+				<form action="">
+				<ul>
+					<li class="top">
+						<div class="first"><input type="checkbox" class="checkAll" onClick="this.value=check(this.form.list)"> 全选</div>
+						<div>图片信息</div>
+						<div>图片类型</div>
+						<div>价格（元）</div>
+						<div>操作</div>
+					</li>
+					<li>
+						<div class="first"><input type="checkbox" name="list" class="check"><img src="images/good_pic.jpg" alt="" class="thumb"></div>
+						<div>
+							<p>圣诞风游戏广告</p>
+							<p>图片ID：20206208</p>
+							<p>购买型号：XXL</p>
+							<p>像素：5184*3456</p>
+							<p>尺寸：43.89cm*29.26cm</p>
+							<p>300DPI</p>
+						</div>
+						<div>RF</div>
+						<div>¥200</div>
+						<div><input type="button" class="del" value="删除"></div>
+					</li>
+					<li>
+						<div class="first"><input type="checkbox" name="list" class="check"><img src="images/good_pic.jpg" alt="" class="thumb"></div>
+						<div>
+							<p>圣诞风游戏广告</p>
+							<p>图片ID：20206208</p>
+							<p>购买型号：XXL</p>
+							<p>像素：5184*3456</p>
+							<p>尺寸：43.89cm*29.26cm</p>
+							<p>300DPI</p>
+						</div>
+						<div>RF</div>
+						<div>¥200</div>
+						<div><input type="button" class="del" value="删除"></div>
+					</li>
+					<li class="bottom">
+						<div class="l"><a href="#">删除选中图片</a></div>
+						<div class="r"><span>共<b>1张</b>图片</span><span>商品总计：<b class="price">¥ 200</b></span><button>去购买</button></div>
+					</li>
+				</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="bottom">
+		<div class="container">
+			<div class="about">
+				<div class="tit">关于我们</div>
+				<i></i>
+				<ul>
+					<li><a href="#">版权注册</a></li>
+					<li><a href="#">代理协议</a></li>
+					<li><a href="#">版权注册公示</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<div class="tit">关于我们</div>
+				<i></i>
+				<ul>
+					<li><a href="#">上传图片</a></li>
+					<li><a href="#">质量标准</a></li>
+					<li><a href="#">出售条款</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<div class="tit">关于我们</div>
+				<i></i>
+				<ul>
+					<li><a href="#">购图合同</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="sys">
+				<div class="tit">扫一扫</div>
+				<div class="ewm">
+					<img src="images/aewm.jpg" alt="">
+					<p>安卓客户端</p>
+				</div>
+				<div class="ewm">
+					<img src="images/aewm.jpg" alt="">
+					<p>苹果客户端</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>Copyright © 2004-2015  深圳XXX网络科技有限公司版权所有<br>ICP证沪B2－20070020 沪ICP备07006315号 <img src="images/dd.png" alt=""></p>
+			</div>
+		</div>
+	</div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  </body>
+</html>

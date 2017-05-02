@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会员列表</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/table/table.css">
+</head>
+<body>
+	<center>
+		<form action="__URL__/reseach" method="POST">
+			搜索:<select name="types">
+					<option value="0">按会员名搜索</option>
+					<option value="1">按注册时间搜索</option>
+					<option value="2">按登录ip搜索</option>
+					<option value="3">按手机号搜索</option>
+					<option value="4">按用户id搜索</option>
+				</select>
+				<input type ="text" name="qu" value="">
+			<input type="submit" value="点我搜一下">
+		</form>
+	<table border="1" class="table">
+		<tr><th>编号</th><th>所属机构</th><th>会员名</th><th>点数余额</th><th>状态</th><th>操作</th></tr>
+		<foreach name="data" item="vo">
+			<tr><td>{$vo.id}</td><td><if condition="($vo.type eq 0)">个人<else />机构</if></td><td>{$vo.username}</td><td>{$vo.money}</td><td><if condition="($vo.status eq 0)"><a href="__URL__/get_state/id/{$vo.id}">一键认证</a><elseif condition="$vo.status eq 2"/>未通过<else /> 已认证</if></td><td><a href="__URL__/del/id/{$vo.id}">删除</a>|<a href="__URL__/edit/id/{$vo.id}">修改</a></td></tr>
+		</foreach>
+	</table>
+	{$page}
+	</center>
+</body>
+</html>

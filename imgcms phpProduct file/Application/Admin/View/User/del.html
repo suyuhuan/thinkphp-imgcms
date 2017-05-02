@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会员回收站</title>
+</head>
+<body>
+	<center>
+	<table border="1" >
+		<tr><th>编号</th><th>会员名</th><th>操作</th></tr>
+		<foreach name="data" item="vo">
+			<tr><td>{$vo.id}</td><td>{$vo.username}</td><td><a href="__URL__/del/id/{$vo.id}">删除</a>|<a href="">修改</a></td></tr>
+		</foreach>
+	</table>
+	{$page}
+	</center>
+</body>
+</html>
